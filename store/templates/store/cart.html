@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<span class="sm-text sm-text--h3 sm-text--medium" href="">Ваша корзина</span>
+
+<div class="products_cart">
+    <div class="column_cart">
+        {% for product in cart_data %}
+        <div class="card_cart">
+            <a href="/product/{{ product.id }}" class="card-link">
+                <div class="card-inner">
+                    <div class="img-el_cart">
+                        <img src="{{ product.image }}" alt="{{ product.name }}">
+                    </div>
+                    <div class="card-content_cart">
+                        <div class="card-name_cart">{{ product.name }}</div>
+                        <div class="card-type_cart">{{ product.category.get_translated_name }}</div>
+                        <div class="card-price_cart">{{ product.price }} Р</div>
+                    </div>
+                </div>
+            </a>
+            <button class="delete-btn">Удалить</button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
