@@ -7,7 +7,7 @@
     <div class="column_cart">
         {% for product in cart_data %}
         <div class="card_cart">
-            <a href="/product/{{ product.id }}" class="card-link">
+            <a href="/store/product/{{ product.id }}" class="card-link">
                 <div class="card-inner">
                     <div class="img-el_cart">
                         <img src="{{ product.image }}" alt="{{ product.name }}">
